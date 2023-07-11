@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<fx:root maxHeight="1366.0" maxWidth="768.0" minHeight="1366.0" minWidth="768.0" prefHeight="1366.0" prefWidth="768.0"
+         style="-fx-background-color: white;" type="AnchorPane" xmlns="http://javafx.com/javafx/20.0.1"
+         xmlns:fx="http://javafx.com/fxml/1">
+    <BorderPane prefHeight="1366.0" prefWidth="768.0" stylesheets="@../assets/css/style.css"
+                AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                AnchorPane.topAnchor="0.0">
+        <top>
+            <AnchorPane prefHeight="80.0" BorderPane.alignment="CENTER">
+                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="80.0" prefWidth="768.0"
+                       styleClass="lbl-message-imprima" stylesheets="@../assets/css/style.css"
+                       text="IMPRIMA SUA SENHA" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                       AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"/>
+            </AnchorPane>
+        </top>
+        <left>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="WWW.SUPERPINHEIRAO.COM.BR"
+                  BorderPane.alignment="CENTER"/>
+        </left>
+        <bottom>
+            <SplitPane dividerPositions="0.75" prefHeight="60.0" style="-fx-background-color: black;"
+                       BorderPane.alignment="CENTER">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0"
+                            SplitPane.resizableWithParent="false">
+                    <SplitPane disable="true" dividerPositions="0.35" orientation="VERTICAL"
+                               prefHeight="60.0" prefWidth="576.0" style="-fx-background-color: black;"
+                               AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                               AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane SplitPane.resizableWithParent="false">
+                            <padding>
+                                <Insets left="5.0"/>
+                            </padding>
+                            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0"
+                                  text="WWW.SUPERPINHEIRAO.COM.BR" AnchorPane.bottomAnchor="-1.0"
+                                  AnchorPane.leftAnchor="0.0"
+                                  AnchorPane.rightAnchor="-4.66845703125"
+                                  AnchorPane.topAnchor="0.0"/>
+                        </AnchorPane>
+                        <AnchorPane SplitPane.resizableWithParent="false">
+                            <Label fx:id="txtFlow" alignment="CENTER" contentDisplay="CENTER"
+                                   layoutX="288.0" layoutY="12.0" prefHeight="39.0"
+                                   prefWidth="576.0" text="TEXT FLOW HERE TYPE HERE"
+                                   textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP"
+                                   AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                   AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <font>
+                                    <Font size="36.0"/>
+                                </font>
+                            </Label>
+                        </AnchorPane>
+                    </SplitPane>
+                </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                    <SplitPane dividerPositions="0.45" orientation="VERTICAL" prefHeight="60.0"
+                               prefWidth="192.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                               AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0"
+                                    SplitPane.resizableWithParent="false">
+                            <children>
+                                <TilePane alignment="CENTER" prefHeight="30.0" prefWidth="192.0"
+                                          AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                          AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <Label alignment="CENTER" contentDisplay="CENTER" text="C"
+                                               textAlignment="CENTER" textFill="WHITE">
+                                            <font>
+                                                <Font size="24.0"/>
+                                            </font>
+                                        </Label>
+                                        <Label alignment="CENTER" contentDisplay="CENTER" text="27°"
+                                               textFill="WHITE">
+                                            <font>
+                                                <Font size="24.0"/>
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </TilePane>
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0"
+                                    SplitPane.resizableWithParent="false">
+                            <children>
+                                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="33.0"
+                                       prefWidth="192.0" text="14:22:01" textFill="WHITE"
+                                       AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                       AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <font>
+                                        <Font size="24.0"/>
+                                    </font>
+                                </Label>
+                            </children>
+                        </AnchorPane>
+                    </SplitPane>
+                </AnchorPane>
+            </SplitPane>
+        </bottom>
+    </BorderPane>
+</fx:root>

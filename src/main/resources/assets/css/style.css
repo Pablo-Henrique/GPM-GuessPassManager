@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
+
+* {
+    -fx-font-family: 'Rubik Mono One', sans-serif;    
+    -fx-background-color: transparent;
+}
+
+.main {
+    -fx-background-color: linear-gradient(to bottom, #004203, #007510, #00a516, #00c21a);
+}
+
+.lbl-message-imprima {
+    -fx-font-size: 50px;
+}
