@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -13,94 +14,99 @@
 <?import javafx.scene.text.Text?>
 
 
- <BorderPane minHeight="600.0" minWidth="600.0" styleClass="main" stylesheets="@../assets/css/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.happysy.gpm.controller.GManagerController">
-     <top>
-         <AnchorPane BorderPane.alignment="CENTER">
-         <GridPane alignment="CENTER" prefHeight="80.0" prefWidth="769.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-           <columnConstraints>
-             <ColumnConstraints fillWidth="false" halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-             <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-           </columnConstraints>
-           <rowConstraints>
-             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-           </rowConstraints>
-            <children>
-                   <Label alignment="CENTER" contentDisplay="CENTER" styleClass="lbl-message-imprima" text="SENHA" textFill="WHITE" GridPane.valignment="CENTER">
-                  <GridPane.margin>
-                     <Insets />
-                  </GridPane.margin>
-               </Label>
-               <Label styleClass="lbl-message-imprima" text="000" textFill="RED" GridPane.columnIndex="1">
-                  <GridPane.margin>
-                     <Insets left="50.0" />
-                  </GridPane.margin>
-               </Label>
-            </children>
-         </GridPane>
-         </AnchorPane>
-     </top>
-     <bottom>
-         <SplitPane fx:id="splitPaneP" dividerPositions="1.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
-             <AnchorPane nodeOrientation="LEFT_TO_RIGHT" SplitPane.resizableWithParent="false">
-                 <SplitPane disable="true" dividerPositions="0.5" orientation="VERTICAL" prefHeight="62.0" prefWidth="594.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <AnchorPane SplitPane.resizableWithParent="false">
-                         <padding>
-                             <Insets left="5.0" />
-                         </padding>
-                         <Text fx:id="lblMessage" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="MESSAGE FIXED" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                     </AnchorPane>
-                     <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="30.0" minWidth="594.0" SplitPane.resizableWithParent="false">
+<AnchorPane xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.happysy.gpm.controller.GManagerController">
+   <children>
+       <BorderPane minHeight="600.0" minWidth="600.0" prefHeight="600.0" prefWidth="769.0" styleClass="main" stylesheets="@../assets/css/style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+           <top>
+               <AnchorPane BorderPane.alignment="CENTER">
+               <GridPane alignment="CENTER" prefHeight="80.0" prefWidth="769.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                 <columnConstraints>
+                   <ColumnConstraints fillWidth="false" halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                   <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                 </columnConstraints>
+                 <rowConstraints>
+                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                 </rowConstraints>
                   <children>
-                     <Text fx:id="lblTextFlow" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                        <font>
-                           <Font size="24.0" />
-                        </font>
-                     </Text>
+                         <Label alignment="CENTER" contentDisplay="CENTER" styleClass="lbl-message-imprima" text="SENHA" textFill="WHITE" GridPane.valignment="CENTER">
+                        <GridPane.margin>
+                           <Insets right="10.0" />
+                        </GridPane.margin>
+                     </Label>
+                     <Label styleClass="lbl-message-imprima" text="000" textFill="RED" GridPane.columnIndex="1">
+                        <GridPane.margin>
+                           <Insets left="35.0" />
+                        </GridPane.margin>
+                     </Label>
                   </children>
-                     </AnchorPane>
-                 </SplitPane>
-             </AnchorPane>
-             <AnchorPane SplitPane.resizableWithParent="false">
-                 <SplitPane dividerPositions="0.45" layoutX="-56.0" maxWidth="150.0" minWidth="150.0" orientation="VERTICAL" prefWidth="150.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <AnchorPane SplitPane.resizableWithParent="false">
-                         <TilePane alignment="CENTER" prefHeight="30.0" prefWidth="150.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                             <Label alignment="CENTER" contentDisplay="CENTER" text="C" textAlignment="CENTER" textFill="WHITE" TilePane.alignment="CENTER">
-                                 <font>
-                                     <Font size="24.0" />
-                                 </font>
-                                 <padding>
-                                     <Insets right="5.0" />
-                                 </padding>
-                             </Label>
-                             <Label fx:id="lblTemperature" alignment="CENTER" contentDisplay="CENTER" text="-°" textFill="WHITE">
-                                 <font>
-                                     <Font size="24.0" />
-                                 </font>
-                                 <padding>
-                                     <Insets left="5.0" />
-                                 </padding>
-                             </Label>
-                         </TilePane>
-                     </AnchorPane>
-                     <AnchorPane SplitPane.resizableWithParent="false">
-                         <Label fx:id="lblHour" alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" prefHeight="32.0" prefWidth="150.0" text="HH:MM:SS" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                             <font>
-                                 <Font size="20.0" />
-                             </font>
-                         </Label>
-                     </AnchorPane>
-                 </SplitPane>
-             </AnchorPane>
-         <padding>
-            <Insets right="25.0" />
-         </padding>
-         </SplitPane>
-     </bottom>
-   <center>
-      <AnchorPane BorderPane.alignment="CENTER">
-         <children>
-            <Label fx:id="lblImageCarousel" minHeight="120.0" minWidth="120.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-         </children>
-      </AnchorPane>
-   </center>
- </BorderPane>
+               </GridPane>
+               </AnchorPane>
+           </top>
+           <bottom>
+               <SplitPane fx:id="splitPaneP" dividerPositions="1.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
+                   <AnchorPane nodeOrientation="LEFT_TO_RIGHT" SplitPane.resizableWithParent="false">
+                       <SplitPane disable="true" dividerPositions="0.5" orientation="VERTICAL" prefHeight="62.0" prefWidth="594.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <AnchorPane SplitPane.resizableWithParent="false">
+                               <padding>
+                                   <Insets left="5.0" />
+                               </padding>
+                               <Text fx:id="lblMessage" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="MESSAGE FIXED" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </AnchorPane>
+                           <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="30.0" minWidth="594.0" SplitPane.resizableWithParent="false">
+                        <children>
+                           <Text fx:id="lblTextFlow" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <font>
+                                 <Font size="24.0" />
+                              </font>
+                           </Text>
+                        </children>
+                           </AnchorPane>
+                       </SplitPane>
+                   </AnchorPane>
+                   <AnchorPane SplitPane.resizableWithParent="false">
+                       <SplitPane dividerPositions="0.45" layoutX="-56.0" maxWidth="150.0" minWidth="150.0" orientation="VERTICAL" prefWidth="150.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <AnchorPane SplitPane.resizableWithParent="false">
+                               <TilePane alignment="CENTER" prefHeight="30.0" prefWidth="150.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                   <Label alignment="CENTER" contentDisplay="CENTER" text="C" textAlignment="CENTER" textFill="WHITE" TilePane.alignment="CENTER">
+                                       <font>
+                                           <Font size="24.0" />
+                                       </font>
+                                       <padding>
+                                           <Insets right="5.0" />
+                                       </padding>
+                                   </Label>
+                                   <Label fx:id="lblTemperature" alignment="CENTER" contentDisplay="CENTER" text="-°" textFill="WHITE">
+                                       <font>
+                                           <Font size="24.0" />
+                                       </font>
+                                       <padding>
+                                           <Insets left="5.0" />
+                                       </padding>
+                                   </Label>
+                               </TilePane>
+                           </AnchorPane>
+                           <AnchorPane SplitPane.resizableWithParent="false">
+                               <Label fx:id="lblHour" alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" prefHeight="32.0" prefWidth="150.0" text="HH:MM:SS" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                   <font>
+                                       <Font size="20.0" />
+                                   </font>
+                               </Label>
+                           </AnchorPane>
+                       </SplitPane>
+                   </AnchorPane>
+               <padding>
+                  <Insets right="25.0" />
+               </padding>
+               </SplitPane>
+           </bottom>
+         <center>
+            <AnchorPane BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="lblImageCarousel" minHeight="120.0" minWidth="120.0" prefHeight="458.0" prefWidth="569.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+         </center>
+       </BorderPane>
+      <ImageView fx:id="imgLogoTop" fitHeight="140.0" fitWidth="180.0" pickOnBounds="true" AnchorPane.bottomAnchor="450.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="579.0" AnchorPane.topAnchor="10.0" />
+   </children>
+</AnchorPane>

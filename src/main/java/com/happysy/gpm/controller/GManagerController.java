@@ -1,6 +1,7 @@
 package com.happysy.gpm.controller;
 
 import com.happysy.gpm.util.DateTimeUtil;
+import com.happysy.gpm.util.FileUtil;
 import javafx.animation.Animation;
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
@@ -26,6 +27,8 @@ public class GManagerController implements Initializable {
     private Label lblHour;
     @FXML
     private Label lblImageCarousel;
+    @FXML
+    private ImageView imgLogoTop;
 
     private String message = "Acesse nosso site WWW.SUPERPINHEIRAO.COM.BR e receba ofertas exclusivas!!!";
 
@@ -39,6 +42,7 @@ public class GManagerController implements Initializable {
         setLblHour();
         animatedTextTransition(lblTextFlow);
         imageCarouselAnimation();
+        logoLoader();
     }
 
     private void setMessage() {
@@ -54,9 +58,8 @@ public class GManagerController implements Initializable {
     }
 
     private void animatedTextTransition(Text nodeText) {
-        System.out.println(nodeText.getBoundsInParent().getWidth());
-        TranslateTransition transition = new TranslateTransition(Duration.seconds(20), nodeText);
-        transition.setFromX(nodeText.getBoundsInParent().getWidth());
+        TranslateTransition transition = new TranslateTransition(Duration.seconds(50), nodeText);
+        transition.setFromX(nodeText.getBoundsInParent().getWidth() + nodeText.getText().length());
         transition.setToX(-nodeText.getBoundsInParent().getWidth());
         transition.setAutoReverse(false);
         transition.setCycleCount(Animation.INDEFINITE);
@@ -64,13 +67,10 @@ public class GManagerController implements Initializable {
     }
 
     private void imageCarouselAnimation() {
-        Image image = new Image(getClass().getResource("/assets/img/15506.jpg").toExternalForm());
-        ImageView imageView = new ImageView(image);
-        imageView.setPreserveRatio(false);
-        imageView.fitWidthProperty().bind(lblImageCarousel.widthProperty());
-        imageView.fitHeightProperty().bind(lblImageCarousel.heightProperty());
-        lblImageCarousel.setGraphic(imageView);
+        FileUtil.imageCarousel(lblImageCarousel);
     }
 
+    private void logoLoader() {
+        imgLogoTop.setImage(new Image(getClass().getResource("/assets/img/Logo/logoPinheirao.png").toExternalForm()));
+    }
 }
-
