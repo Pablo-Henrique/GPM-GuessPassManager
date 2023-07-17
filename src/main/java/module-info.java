@@ -2,7 +2,6 @@ module com.happysy.gpm {
     requires javafx.controls;
     requires javafx.fxml;
 
-
     opens com.happysy.gpm to javafx.fxml;
     exports com.happysy.gpm;
 

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.image.ImageView?>
@@ -8,11 +9,11 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.TilePane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-
 
 <AnchorPane xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.happysy.gpm.controller.GManagerController">
    <children>
@@ -33,7 +34,7 @@
                            <Insets right="10.0" />
                         </GridPane.margin>
                      </Label>
-                     <Label styleClass="lbl-message-imprima" text="000" textFill="RED" GridPane.columnIndex="1">
+                     <Label fx:id="lblSenhaUltimaSenha" styleClass="lbl-message-imprima" text="000" textFill="RED" GridPane.columnIndex="1">
                         <GridPane.margin>
                            <Insets left="35.0" />
                         </GridPane.margin>
@@ -103,10 +104,22 @@
             <AnchorPane BorderPane.alignment="CENTER">
                <children>
                   <Label fx:id="lblImageCarousel" minHeight="120.0" minWidth="120.0" prefHeight="458.0" prefWidth="569.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <HBox alignment="CENTER" prefHeight="458.0" prefWidth="769.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane>
+                           <children>
+                              <Button fx:id="btnImprimir" alignment="CENTER" contentDisplay="BOTTOM" minHeight="120.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#handleButtonAction" styleClass="btnImprima" stylesheets="@../assets/css/style.css" text="IMPRIMIR SENHA" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                           </children>
+                           <padding>
+                              <Insets bottom="25.0" />
+                           </padding>
+                        </AnchorPane>
+                     </children>
+                  </HBox>
                </children>
             </AnchorPane>
          </center>
        </BorderPane>
-      <ImageView fx:id="imgLogoTop" fitHeight="140.0" fitWidth="180.0" pickOnBounds="true" AnchorPane.bottomAnchor="450.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="579.0" AnchorPane.topAnchor="10.0" />
+      <ImageView fx:id="imgLogoTop" fitHeight="140.0" fitWidth="180.0" pickOnBounds="true" AnchorPane.bottomAnchor="460.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="589.0" AnchorPane.topAnchor="0.0" />
    </children>
 </AnchorPane>
