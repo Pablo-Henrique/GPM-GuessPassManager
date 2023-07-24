@@ -27,3 +27,13 @@
     -fx-background-color: linear-gradient(to top, #363636, #535353, #6b6b6b, #616161, #818181); /* Cor de fundo do botão */
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 25, 0, 15, 15); /* Efeito de sombra */
 }
+
+.tilePaneSenha {
+    -fx-background-color: black;
+    -fx-background-radius: 20;
+}
+
+.lblSetor {
+    -fx-font-size: 34px;
+    -fx-font-weight: bolder;
+}

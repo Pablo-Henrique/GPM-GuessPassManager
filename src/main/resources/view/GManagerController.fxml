@@ -7,40 +7,19 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.TilePane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.happysy.gpm.controller.GManagerController">
+<AnchorPane xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.happysy.gpc.controller.GPClientController">
    <children>
        <BorderPane minHeight="600.0" minWidth="600.0" prefHeight="600.0" prefWidth="769.0" styleClass="main" stylesheets="@../assets/css/style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
            <top>
-               <AnchorPane BorderPane.alignment="CENTER">
-               <GridPane alignment="CENTER" prefHeight="80.0" prefWidth="769.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                 <columnConstraints>
-                   <ColumnConstraints fillWidth="false" halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                   <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                 </columnConstraints>
-                 <rowConstraints>
-                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                 </rowConstraints>
-                  <children>
-                         <Label alignment="CENTER" contentDisplay="CENTER" styleClass="lbl-message-imprima" text="SENHA" textFill="WHITE" GridPane.valignment="CENTER">
-                        <GridPane.margin>
-                           <Insets right="10.0" />
-                        </GridPane.margin>
-                     </Label>
-                     <Label fx:id="lblSenhaUltimaSenha" styleClass="lbl-message-imprima" text="000" textFill="RED" GridPane.columnIndex="1">
-                        <GridPane.margin>
-                           <Insets left="35.0" />
-                        </GridPane.margin>
-                     </Label>
-                  </children>
-               </GridPane>
+               <AnchorPane style="-fx-background-color: black;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="lblSetor" alignment="CENTER" prefHeight="50.0" prefWidth="769.0" styleClass="lblSetor" stylesheets="@../assets/css/style.css" text="SETOR" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
                </AnchorPane>
            </top>
            <bottom>
@@ -68,20 +47,12 @@
                        <SplitPane dividerPositions="0.45" layoutX="-56.0" maxWidth="150.0" minWidth="150.0" orientation="VERTICAL" prefWidth="150.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <AnchorPane SplitPane.resizableWithParent="false">
                                <TilePane alignment="CENTER" prefHeight="30.0" prefWidth="150.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                   <Label alignment="CENTER" contentDisplay="CENTER" text="C" textAlignment="CENTER" textFill="WHITE" TilePane.alignment="CENTER">
+                                   <Label fx:id="lblDate" alignment="CENTER" contentDisplay="CENTER" text="DATE" textAlignment="CENTER" textFill="WHITE" TilePane.alignment="CENTER">
                                        <font>
                                            <Font size="24.0" />
                                        </font>
                                        <padding>
                                            <Insets right="5.0" />
-                                       </padding>
-                                   </Label>
-                                   <Label fx:id="lblTemperature" alignment="CENTER" contentDisplay="CENTER" text="-°" textFill="WHITE">
-                                       <font>
-                                           <Font size="24.0" />
-                                       </font>
-                                       <padding>
-                                           <Insets left="5.0" />
                                        </padding>
                                    </Label>
                                </TilePane>
@@ -108,7 +79,22 @@
                      <children>
                         <AnchorPane>
                            <children>
-                              <Button fx:id="btnImprimir" alignment="CENTER" contentDisplay="BOTTOM" minHeight="120.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#handleButtonAction" styleClass="btnImprima" stylesheets="@../assets/css/style.css" text="IMPRIMIR SENHA" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                              <Button fx:id="btnImprimir" alignment="CENTER" contentDisplay="TOP" minHeight="120.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#handleButtonAction" styleClass="btnImprima" stylesheets="@../assets/css/style.css" text="IMPRIMIR SENHA" textOverrun="CENTER_ELLIPSIS" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                 <graphic>
+                                    <TilePane alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefColumns="2" prefRows="1" styleClass="tilePaneSenha" stylesheets="@../assets/css/style.css">
+                                       <children>
+                                              <Label alignment="CENTER" contentDisplay="CENTER" styleClass="lbl-message-imprima" text="SENHA" textFill="WHITE">
+                                             <TilePane.margin>
+                                                <Insets />
+                                             </TilePane.margin>
+                                          </Label>
+                                          <Label fx:id="lblSenhaUltimaSenha" styleClass="lbl-message-imprima" text="000" textFill="RED" />
+                                       </children>
+                                       <padding>
+                                          <Insets left="20.0" />
+                                       </padding>
+                                    </TilePane>
+                                 </graphic></Button>
                            </children>
                            <padding>
                               <Insets bottom="25.0" />

@@ -1,4 +1,4 @@
-package com.happysy.gpm;
+package com.happysy.gpc;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -7,15 +7,15 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class Main extends Application {
+public class JavaFXInit extends Application {
 
-    public static void main(String[] args) {
+    public static void init(String[] args) {
         launch(args);
     }
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        FXMLLoader loader = new FXMLLoader(Main.class.getResource("/view/GManagerController.fxml"));
+        FXMLLoader loader = new FXMLLoader(JavaFXInit.class.getResource("/view/GManagerController.fxml"));
         Scene scene = new Scene(loader.load());
         primaryStage.setScene(scene);
         primaryStage.setFullScreen(true);

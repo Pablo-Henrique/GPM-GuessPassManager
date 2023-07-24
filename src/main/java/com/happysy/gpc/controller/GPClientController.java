@@ -1,13 +1,14 @@
-package com.happysy.gpm.controller;
+package com.happysy.gpc.controller;
 
-import com.happysy.gpm.util.DateTimeUtil;
-import com.happysy.gpm.util.FileUtil;
+import com.happysy.gpc.service.GPCService;
+import com.happysy.gpc.util.DateTimeUtil;
+import com.happysy.gpc.util.FileUtil;
+import com.happysy.gpc.util.PrinterUtil;
 import javafx.animation.Animation;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -17,7 +18,7 @@ import javafx.util.Duration;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class GManagerController implements Initializable {
+public class GPClientController implements Initializable {
 
 
     @FXML
@@ -25,23 +26,23 @@ public class GManagerController implements Initializable {
     @FXML
     private Text lblTextFlow;
     @FXML
-    private Label lblTemperature;
+    private Label lblDate;
     @FXML
     private Label lblHour;
     @FXML
     private Label lblImageCarousel;
     @FXML
-    private ImageView imgLogoTop;
-    @FXML
-    private Button btnImprimir;
-    @FXML
     private Label lblSenhaUltimaSenha;
-    private int[] numeral = {9, 9, 0};
-
+    @FXML
+    private Label lblSetor;
+    @FXML
+    private ImageView imgLogoTop;
+    private int[] numeral = {0, 0, 0};
     private String message = "Acesse nosso site WWW.SUPERPINHEIRAO.COM.BR e receba ofertas exclusivas!!!";
 
-    public GManagerController() {
-    }
+    private PrinterUtil service = new PrinterUtil();
+
+    private GPCService gpcService = new GPCService();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -51,6 +52,9 @@ public class GManagerController implements Initializable {
         animatedTextTransition(lblTextFlow);
         imageCarouselAnimation();
         logoLoader();
+        setSetor();
+        DateTimeUtil.dateUpdate(lblDate);
+        setLblSenhaUltimaSenha();
     }
 
     private void setMessage() {
@@ -62,7 +66,7 @@ public class GManagerController implements Initializable {
     }
 
     private void setLblHour() {
-        DateTimeUtil.dateUpdater(lblHour);
+        DateTimeUtil.hoursUpdate(lblHour);
     }
 
     private void animatedTextTransition(Text nodeText) {
@@ -82,30 +86,19 @@ public class GManagerController implements Initializable {
         imgLogoTop.setImage(new Image(getClass().getResource("/assets/img/Logo/logoPinheirao.png").toExternalForm()));
     }
 
+    private void setSetor() {
+        lblSetor.setText("FRIOS");
+    }
+
+    private void setLblSenhaUltimaSenha() {
+        if (gpcService.) {
+
+        }
+        lblSenhaUltimaSenha.setText(gpcService.decimalCountToString());
+    }
+
     @FXML
     private void handleButtonAction(ActionEvent actionEvent) {
-        numeral[2]++;
-        for (int i = 0; i < numeral.length; i++) {
-            if (numeral[i] == 10) {
-                numeral[i] = 0;
-                numeral[i - 1]++;
-            }
-            if (numeral[1] == 10) {
-                numeral[1] = 0;
-                numeral[0]++;
-            }
-        }
-        if (numeral[0] <= 9 && numeral[1] <= 9 && numeral[2] <= 9) {
-            lblSenhaUltimaSenha.setText(String.format("%d%d%d", numeral[0], numeral[1], numeral[2]));
-        }
+        gpcService.generateTicketPass();
     }
-
-    private void weather() {
-        String chave = "a59197c24c8ab586dde0336425f00899";
-        String cidade = "Avaré";
-
-        String urlApi = "http://api.openweathermap.org/data/2.5/weather?q=" + cidade + "&appid=" + chave;
-
-    }
-
 }
