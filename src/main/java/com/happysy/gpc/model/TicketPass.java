@@ -1,14 +1,24 @@
 package com.happysy.gpc.model;
 
-public class TicketPass {
+import java.io.Serial;
+import java.io.Serializable;
 
-    private Long id;
+
+public class TicketPass implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 6655919997150808155L;
+
+    private Integer id;
+
     private String pass;
+
     private String sector;
+
     private String hours;
+
     private String date;
 
-    public TicketPass(Long id, String pass, String sector, String hours, String date) {
+    public TicketPass(Integer id, String pass, String sector, String hours, String date) {
         this.id = id;
         this.pass = pass;
         this.sector = sector;
@@ -19,11 +29,11 @@ public class TicketPass {
     public TicketPass() {
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

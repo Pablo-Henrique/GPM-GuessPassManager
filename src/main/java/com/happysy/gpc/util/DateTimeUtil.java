@@ -9,9 +9,6 @@ import java.time.format.DateTimeFormatter;
 
 public class DateTimeUtil {
 
-
-
-
     public static void hoursUpdate(Label label) {
         Thread thread = new Thread(() -> {
             while (true) {

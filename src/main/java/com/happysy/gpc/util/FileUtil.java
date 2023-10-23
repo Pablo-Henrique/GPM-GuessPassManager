@@ -1,14 +1,24 @@
 package com.happysy.gpc.util;
 
 import javafx.application.Platform;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 import java.io.File;
 import java.time.Duration;
+import java.util.Objects;
 
 public class FileUtil {
+
+    public static FXMLLoader fxmlLoader(String absolutePathFxml) {
+        return new FXMLLoader(FileUtil.class.getResource(absolutePathFxml));
+    }
+
+    public static File fileLoader(String absolutePathFile) {
+        return new File(Objects.requireNonNull(FileUtil.class.getResource(absolutePathFile)).getFile());
+    }
 
     public static void imageCarousel(Label node) {
         Thread imageCarouselThread = new Thread(() -> {
@@ -38,6 +48,5 @@ public class FileUtil {
     public static String[] imageFolderFiles() {
         return new File("/home/pablo/Documentos/projects/GuessPassManager/src/main/resources/assets/img/Banners").list();
     }
-
 
 }

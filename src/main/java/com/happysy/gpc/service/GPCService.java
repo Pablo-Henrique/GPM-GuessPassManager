@@ -10,7 +10,7 @@ public class GPCService {
     private static final int HUNDRED_DECIMAL_PLACE_VALUE = 0;
     private static final int TEN_DECIMAL_PLACE_VALUE = 1;
     private static final int UNIT_DECIMAL_PLACE_VALUE = 2;
-    private final int[] decimalCount = {0, 9, 0};
+    private final int[] decimalCount = {0, 0, 0};
 
     private TicketPassRepository ticketPassRepository;
 
@@ -42,12 +42,6 @@ public class GPCService {
 
     public boolean isTheNumberGreaterThanNine(int value) {
         return value == MAX_DIGIT_VALUE;
-    }
-
-    public boolean decimalHasBeenUpdated() {
-        for (int i = 0; i < decimalCount.length; i++) {
-            return decimalCount[i] !=
-        }
     }
 
     public void resetValueToZeroByDecimalPosition(int index) {

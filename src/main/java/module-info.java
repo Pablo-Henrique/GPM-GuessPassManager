@@ -2,13 +2,12 @@ module com.happysy.gpc {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.base;
-    requires okhttp3;
-    requires annotations;
-    requires com.fasterxml.jackson.databind;
-    requires android.json;
     requires java.desktop;
+    requires java.sql;
 
-    opens com.happysy.gpc to javafx.fxml;
+    uses com.happysy.gpc.Main;
+
+    opens com.happysy.gpc to javafx.fxml, javafx.graphics, java.base;
     exports com.happysy.gpc;
 
     opens com.happysy.gpc.controller to javafx.fxml;

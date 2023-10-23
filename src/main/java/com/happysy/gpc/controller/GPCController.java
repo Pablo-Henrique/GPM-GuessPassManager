@@ -1,9 +1,12 @@
 package com.happysy.gpc.controller;
 
+import com.happysy.gpc.model.TicketPass;
+import com.happysy.gpc.repository.TickerPassRepositoryImpl;
+import com.happysy.gpc.repository.TicketPassRepository;
 import com.happysy.gpc.service.GPCService;
+import com.happysy.gpc.service.PrinterService;
 import com.happysy.gpc.util.DateTimeUtil;
 import com.happysy.gpc.util.FileUtil;
-import com.happysy.gpc.util.PrinterUtil;
 import javafx.animation.Animation;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
@@ -18,8 +21,7 @@ import javafx.util.Duration;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class GPClientController implements Initializable {
-
+public class GPCController implements Initializable {
 
     @FXML
     private Text lblMessage;
@@ -37,12 +39,10 @@ public class GPClientController implements Initializable {
     private Label lblSetor;
     @FXML
     private ImageView imgLogoTop;
-    private int[] numeral = {0, 0, 0};
     private String message = "Acesse nosso site WWW.SUPERPINHEIRAO.COM.BR e receba ofertas exclusivas!!!";
-
-    private PrinterUtil service = new PrinterUtil();
-
     private GPCService gpcService = new GPCService();
+    private PrinterService printer = new PrinterService();
+    private TicketPassRepository repository = new TickerPassRepositoryImpl();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -51,10 +51,10 @@ public class GPClientController implements Initializable {
         setLblHour();
         animatedTextTransition(lblTextFlow);
         imageCarouselAnimation();
+
         logoLoader();
         setSetor();
         DateTimeUtil.dateUpdate(lblDate);
-        setLblSenhaUltimaSenha();
     }
 
     private void setMessage() {
@@ -90,15 +90,11 @@ public class GPClientController implements Initializable {
         lblSetor.setText("FRIOS");
     }
 
-    private void setLblSenhaUltimaSenha() {
-        if (gpcService.) {
-
-        }
-        lblSenhaUltimaSenha.setText(gpcService.decimalCountToString());
-    }
-
     @FXML
     private void handleButtonAction(ActionEvent actionEvent) {
+        repository.insert(new TicketPass(1, lblSenhaUltimaSenha.getText(), "frios", lblHour.getText(), lblDate.getText()));
         gpcService.generateTicketPass();
+        lblSenhaUltimaSenha.setText(gpcService.decimalCountToString());
+        printer.printerDocument("/assets/ticket/ticker.html");
     }
 }
