@@ -1,10 +1,9 @@
 package com.happysy.gpc.service;
 
+import com.happysy.gpc.repository.TickerPassRepositoryImpl;
 import com.happysy.gpc.repository.TicketPassRepository;
 
-import java.util.Arrays;
-
-public class GPCService {
+public class TicketPassService {
 
     private static final int MAX_DIGIT_VALUE = 10;
     private static final int HUNDRED_DECIMAL_PLACE_VALUE = 0;
@@ -12,20 +11,27 @@ public class GPCService {
     private static final int UNIT_DECIMAL_PLACE_VALUE = 2;
     private final int[] decimalCount = {0, 0, 0};
 
-    private TicketPassRepository ticketPassRepository;
+    private final TicketPassRepository ticketPassRepository;
 
-    public GPCService(TicketPassRepository ticketPassRepository) {
-        this.ticketPassRepository = ticketPassRepository;
+    public TicketPassService() {
+        this.ticketPassRepository = new TickerPassRepositoryImpl();
     }
 
-    public GPCService() {
+    public boolean isSyncPass(String senha) {
+        return ticketPassRepository.findPassById(1).equals(senha);
     }
 
-    public void generateTicketPass() {
+    public String syncPass() {
+        return ticketPassRepository.findPassById(1);
+    }
+
+    public String generatePass() {
         incrementTicketPassValue(UNIT_DECIMAL_PLACE_VALUE);
         verifyDecimalValueInArrayToReset();
-        System.out.println(Arrays.toString(decimalCount));
+        ticketPassRepository.updatePassById(1, decimalCountToString());
+        return ticketPassRepository.findPassById(1);
     }
+
 
     public void verifyDecimalValueInArrayToReset() {
         for (int i = 0; i < decimalCount.length; i++) {
@@ -37,6 +43,7 @@ public class GPCService {
                 incrementTicketPassValue(HUNDRED_DECIMAL_PLACE_VALUE);
                 resetValueToZeroByDecimalPosition(TEN_DECIMAL_PLACE_VALUE);
             }
+
         }
     }
 
@@ -70,6 +77,10 @@ public class GPCService {
 
     public String decimalCountToString() {
         return String.format("%d%d%d", getHundred(), getTen(), getUnit());
+    }
+
+    public int[] decimalCountToInt() {
+        return new int[]{getHundred(), getTen(), getUnit()};
     }
 
 }

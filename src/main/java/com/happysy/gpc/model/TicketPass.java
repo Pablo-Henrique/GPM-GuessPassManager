@@ -10,20 +10,17 @@ public class TicketPass implements Serializable {
 
     private Integer id;
 
-    private String pass;
+    private String senha;
 
-    private String sector;
+    private String setor;
 
-    private String hours;
+    private String loja;
 
-    private String date;
-
-    public TicketPass(Integer id, String pass, String sector, String hours, String date) {
+    public TicketPass(Integer id, String senha, String setor, String loja) {
         this.id = id;
-        this.pass = pass;
-        this.sector = sector;
-        this.hours = hours;
-        this.date = date;
+        this.senha = senha;
+        this.setor = setor;
+        this.loja = loja;
     }
 
     public TicketPass() {
@@ -37,35 +34,38 @@ public class TicketPass implements Serializable {
         this.id = id;
     }
 
-    public String getPass() {
-        return pass;
+    public String getSenha() {
+        return senha;
     }
 
-    public void setPass(String pass) {
-        this.pass = pass;
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 
-    public String getSector() {
-        return sector;
+    public String getSetor() {
+        return setor;
     }
 
-    public void setSector(String sector) {
-        this.sector = sector;
+    public void setSetor(String setor) {
+        this.setor = setor;
     }
 
-    public String getHours() {
-        return hours;
+    public String getLoja() {
+        return loja;
     }
 
-    public void setHours(String hours) {
-        this.hours = hours;
+    public void setLoja(String loja) {
+        this.loja = loja;
     }
 
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
+    @Override
+    public String toString() {
+        return "\n" +
+                "TicketPass{" +
+                "id=" + id +
+                ", pass='" + senha + '\'' +
+                ", sector='" + setor + '\'' +
+                ", loja='" + loja + '\'' +
+                '}';
     }
 }

@@ -7,10 +7,19 @@ module com.happysy.gpc {
 
     uses com.happysy.gpc.Main;
 
-    opens com.happysy.gpc to javafx.fxml, javafx.graphics, java.base;
+    opens com.happysy.gpc to java.base, javafx.fxml, java.compiler, java.sql, javafx.controls;
     exports com.happysy.gpc;
 
-    opens com.happysy.gpc.controller to javafx.fxml;
+    opens com.happysy.gpc.dto;
+    exports com.happysy.gpc.dto;
+
+    opens com.happysy.gpc.controller;
     exports com.happysy.gpc.controller;
+
+    opens com.happysy.gpc.repository;
+    exports com.happysy.gpc.repository;
+
+    opens com.happysy.gpc.service;
+    exports com.happysy.gpc.service;
 
 }
